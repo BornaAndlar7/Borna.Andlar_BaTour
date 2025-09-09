@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - BaTour</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            background-color: #1b5e20;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background-color: #2e7d32;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4caf50;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1b5e20;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+        
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="BaTour_Logo.svg" alt="BaTour Logo">
+            <div class="logo-text">BaTour</div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html">Početna</a>
+        <a href="index.html#about">O nama</a>
+        <a href="index.html#services">Usluge</a>
+        <a href="index.html#gallery">Galerija</a>
+        <a href="index.html#reviews">Recenzije</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    
+    <div class="container">
+        <section>
+            <h2>Kontaktirajte nas</h2>
+            
+            <div class="form-group">
+                <h3>Pošaljite nam poruku</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email adresa</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Predmet</label>
+                        <select id="subject">
+                            <option value="">Odaberite predmet</option>
+                            <option value="info">Informacije o turi</option>
+                            <option value="booking">Rezervacija</option>
+                            <option value="custom">Prilagođena tura</option>
+                            <option value="other">Ostalo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit">Pošalji poruku</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Adresa</h3>
+                    <p>Kamenita ulica 35</p>
+                    <p>51300 Delnice, Hrvatska</p>
+                </div>
+                <div class="info-item">
+                    <h3>Kontakt</h3>
+                    <p>Email: bornaandlar@gmail.com</p>
+                    <p>Tel: +385 91 5262 140</p>
+                </div>
+                <div class="info-item">
+                    <h3>Radno vrijeme</h3>
+                    <p>Pon - Pet: 8:00 - 16:00</p>
+                    <p>Subota: 9:00 - 13:00</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 BaTour - Turistički vodič po Gorskome kotaru. Sva prava pridržana.</p>
+        <p>Adresa: Kamenita ulica 35, Delnice | Email: bornaandlar@gmail.com | Tel: +385 91 5262 140</p>
+    </footer>
+</body>
+</html>

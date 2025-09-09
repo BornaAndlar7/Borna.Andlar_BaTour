@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaTour - Turistički vodič po Gorskome kotaru</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            background-color: #1b5e20;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background-color: #2e7d32;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4caf50;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service {
+            background-color: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .service h3 {
+            color: #2e7d32;
+            text-align: center;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-content h3 {
+            color: #2e7d32;
+        }
+        
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .review {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .review-name {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .review-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .review-rating {
+            color: #ffc107;
+            margin: 0.5rem 0;
+        }
+        
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .info-link {
+            color: #2e7d32;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .info-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="BaTour_Logo.svg" alt="BaTour Logo">
+            <div class="logo-text">BaTour</div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#home">Početna</a>
+        <a href="#about">O nama</a>
+        <a href="#services">Usluge</a>
+        <a href="#gallery">Galerija</a>
+        <a href="#reviews">Recenzije</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    
+    <div class="container">
+        <section id="home">
+            <h2>Dobrodošli u BaTour - Vašeg vodiča po Gorskome kotaru</h2>
+            <p>Otkrijte ljepotu prirode, netaknute šume, čiste rijeke i prekrasne planine Gorskog kotara. Naša stručna ekipa vodiča osigurat će vam nezaboravno iskustvo u srcu Hrvatske.</p>
+            
+            <h2>Upoznajte Gorski kotar</h2>
+            <div class="video-container">
+                <video controls poster="Petehovac.jpg">
+                    <source src="BaTour_Video.mp4" type="video/mp4">
+                    Vaš preglednik ne podržava video element.
+                </video>
+            </div>
+            <p style="text-align: center;">Video: Predstavljamo vam ljepote Gorskog kotara</p>
+        </section>
+        
+        <section id="about">
+            <h2>O nama</h2>
+            <h3>Naša priča</h3>
+            <p>BaTour je osnovan 2020. godine iz ljubavi prema prirodnim ljepotama Gorskog kotara. Naš osnivač, Borna Andlar, rođeni Delničanin, odlučio je podijeliti ljepotu svog kraja s posjetiteljima iz cijelog svijeta.</p>
+            <p>Danas nas čini tim od 8 strastvenih vodiča koji poznaju svaki kutak Gorskog kotara. Naše iskustvo i ljubav prema prirodi omogućuju nam da pružimo autentična i nezaboravna iskustva svakom posjetitelju.</p>
+            <p>Ako želite više saznati o Gorskome kotaru, npr. o smještaju, gastronomiji ili domaćim proizvodima, možete kliknuti <a href="https://www.gorskikotar.hr" class="info-link" target="_blank">ovdje</a>.</p>
+            
+            <h3>Naša misija</h3>
+            <p>Naša misija je promovirati održivi turizam i educirati posjetitelje o važnosti očuvanja prirode. Kroz naše ture želimo pružiti uvid u jedinstveni ekosustav Gorskog kotara te njegovu bogatu kulturnu baštinu.</p>
+            
+            <h3>Zašto odabrati nas?</h3>
+            <ul>
+                <li>Lokalni vodiči s dubokim poznavanjem područja</li>
+                <li>Mali grupni izleti za personalizirano iskustvo</li>
+                <li>Edukativni sadržaj o flori i fauni</li>
+                <li>Prilagodljive ture prema vašim interesima i sposobnostima</li>
+                <li>Naglasak na sigurnosti i održivosti</li>
+            </ul>
+        </section>
+        
+        <section id="services">
+            <h2>Naše usluge</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Vođene pješačke ture</h3>
+                    <p>Nudimo raznovrsne pješačke ture po najljepšim stazama Gorskog kotara. Naši iskusni vodiči će vas provesti kroz netaknute šume, uz rijeke i potoke, te do prekrasnih vidikovaca. Ture su prilagođene svim dobima i kondicijskim sposobnostima.</p>
+                </div>
+                
+                <div class="service">
+                    <h3>Edukativni programi o prirodi</h3>
+                    <p>Upoznajte bogatstvo flore i faune Gorskog kotara kroz naše edukativne programe. Naučite prepoznavati biljne i životinjske vrste, saznajte o ekosustavu i načinima očuvanja prirode. Idealno za školske ekskurzije i ljubitelje prirode.</p>
+                </div>
+                
+                <div class="service">
+                    <h3>Fotografiranje prirode</h3>
+                    <p>Za ljubitelje fotografije, nudimo specijalizirane ture do najfotogeničnijih lokacija Gorskog kotara. Naš vodič-fotograf će vam pokazati najbolje kutove za snimanje i podijeliti savjete kako uhvatiti savršene trenutke u prirodi.</p>
+                </div>
+                
+                <div class="service">
+                    <h3>Individualne i grupne ture</h3>
+                    <p>Organiziramo ture po vašoj mjeri - od individualnih izleta za parove do grupnih tura za veće skupine. Prilagođavamo itinerer prema vašim interesima, fizickoj spremnosti i vremenskim mogućnostima.</p>
+                </div>
+                
+                <div class="service">
+                    <h3>Specijalne sezonske ture</h3>
+                    <p>Uživajte u posebnim sezonskim turama: jesenjem šetnji uz promjenu boja lišća, zimskim šetnjama po snijegom prekrivenim šumama, proljetnom traženju cvijeća i ljetnim izletima uz bistre planinske potoke.</p>
+                </div>
+                
+                <div class="service">
+                    <h3>Team building aktivnosti</h3>
+                    <p>Organiziramo team building aktivnosti u prirodi za tvrtke i organizacije. Kombiniramo avanture u prirodi s timskim izazovima koji potiču suradnju, komunikaciju i povjerenje među sudionicima.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2>Galerija</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="Lokvarsko_jezero1.jpg" alt="Lokvarsko jezero" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Lokvarsko jezero</h3>
+                        <p>Umjetno akumulacijsko jezero smješteno u srcu Gorskog kotara, okruženo bujnim šumama. Popularno je odredište za ljubitelje prirode, ribolovce i one koji traže mir i opuštanje uz prekrasne prizore.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Kamačnik.jpg" alt="Kamačnik" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Kamačnik</h3>
+                        <p>Jedan od najljepših kanjona u Gorskome kotaru, sa stijenama visokim i do 50 metara. Rijeka Kamačnik nudi predivan prizor i priliku za fotografiranje. Prolaz kroz kanjon je prava avantura za sve ljubitelje prirode.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Dvorac Stara Sušica.jpg" alt="Dvorac Stara Sušica" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Dvorac Stara Sušica</h3>
+                        <p>Dvorac Stara Sušica smješten je u Gorskom kotaru, okružen gustim šumama i planinskim krajolikom. Izgrađen u 19. stoljeću, danas služi kao centar za izlete, edukaciju i dječje kampove, čuvajući duh bajkovite prošlosti.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Petehovac1.jpg" alt="Petehovac" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Petehovac</h3>
+                        <p>Planinsko naselje koje nudi prekrasan pogled na okolne planine i doline. Popularno odredište za planinare i one koji traže mir i tišinu prirode. Zimi postaje omiljeno odredište za skijaše i ljubitelje zimskih sportova.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Japlenški_vrh.jpg" alt="Japlenški vrh" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Japlenški vrh u Delnicama</h3>
+                        <p>Vrh koji nudi panoramski pogled na Delnice. Popularno odredište za planinare i fotografe koji žele uhvatiti najljepše zalaske sunca. S vrha se pruža nezaboravan pogled na okolna brda i Kupsku dolinu.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="Rijeka_Kupa.jpg" alt="Brod na Kupi" class="gallery-img">
+                    <div class="gallery-content">
+                        <h3>Brod na Kupi</h3>
+                        <p>Brod na Kupi je središnje mjesto Kupske doline, pokraj same granice sa Slovenijom. Poznato je izletište za kupače, ribolovce, kajakaše i bicikliste. Poznat je i po građevini kaštelu Zrinski.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="reviews">
+            <h2>Što naši posjetitelji kažu</h2>
+            <div class="reviews">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">M</div>
+                        <div>
+                            <div class="review-name">Marko</div>
+                            <div class="review-date">15. kolovoza 2025.</div>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                    <p>"Predivno iskustvo, Gorski kotar je zbilja predivan, vodiči su se zbilja potrudili pokazati nam sve atrakcije. Preporučam svima."</p>
+                </div>
+                
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">D</div>
+                        <div>
+                            <div class="review-name">Danijela</div>
+                            <div class="review-date">3. rujna 2024.</div>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                    <p>" Bila sam prošli vikend sa prijateljima, bilo nam je super, dečki koji su nas vodili su zbilja profesionalni i jako se trude."</p>
+                </div>
+                
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">I</div>
+                        <div>
+                            <div class="review-name">Ivana</div>
+                            <div class="review-date">28. srpnja 2024.</div>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★☆</div>
+                    <p>"Sve u svemu bilo je uredu, puno vremena smo gubili na putovanja od jednog do drugog odredišta, te nismo imali vremena za fotografiranje, a pjezaž je zbilja prekrasan."</p>
+                </div>
+                
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">V</div>
+                        <div>
+                            <div class="review-name">Vlatka</div>
+                            <div class="review-date">10. listopada 2023.</div>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                    <p>" Zaista predivno iskustvo preporučam svima. Samo jedna preporuka, uzmite si više dana za razgledavanje jer stvarno ima svega za vidjeti. "</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 BaTour - Turistički vodič po Gorskome kotaru. Sva prava pridržana.</p>
+        <p>Adresa: Kamenita ulica 35, Delnice | Email: bornaandlar@gmail.com | Tel: +385 91 5262 140</p>
+    </footer>
+</body>
+</html
